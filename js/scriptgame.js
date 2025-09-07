@@ -10,7 +10,7 @@ function createCards() {
       letter: nameSequence[i],
       isFlipped: false,
       isMatched: false,
-      imagePath: `card_${nameSequence[i]}.svg`
+      imagePath: `images/card_${nameSequence[i]}.svg`
     };
     cards.push(card);
   }
@@ -44,7 +44,7 @@ function displayCards() {
   cards.forEach(card => {
     const cardElement = document.createElement('div');
     cardElement.classList.add('card');
-    cardElement.style.backgroundImage = card.isFlipped || card.isMatched ? `url(${card.imagePath})` : 'url(card_flipped.svg)';
+    cardElement.style.backgroundImage = card.isFlipped || card.isMatched ? `url(${card.imagePath})` : 'url(../images/card_flipped.svg)';
     cardElement.setAttribute('data-letter', card.letter);
     cardElement.addEventListener('click', () => flipCard(cardElement));
     gameBoard.appendChild(cardElement);
@@ -56,7 +56,7 @@ function hideInitialCards() {
   setTimeout(() => {
     cards.forEach(card => {
       const cardElement = document.querySelector(`[data-letter="${card.letter}"]`);
-      cardElement.style.backgroundImage = 'url(card_flipped.svg)'; 
+      cardElement.style.backgroundImage = 'url(../images/card_flipped.svg)'; 
     });
     setTimeout(() => {
       displayCards(); 

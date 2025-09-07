@@ -3,7 +3,7 @@ html {
     flex-direction: column;
     align-items: center;
     align-content: center;
-    background-image: url(images/gamebackground.jpg);
+    background-image: url(../images/gamebackground.jpg);
     background-position: center center;
     background-size: center;
     margin-left: 0px;
